@@ -1,5 +1,6 @@
 
 
+![](https://github.com/Shavindra/ISB/blob/main/2025/Screenshot%202025-10-22%20at%2023.19.24.png?raw=true)
 
 ## Workgroup 1
 1. The European Space Agency (ESA) has asked you to design a probe that will look
