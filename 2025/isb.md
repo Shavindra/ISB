@@ -1,17 +1,3 @@
-Transcriptome
-Proteome 
-Metablome
-Data integration
-
-10 data integration into genome scale models.pdf
-
-transcriptomics: measures “all” the mRNA concentrations in a
-cell
-• proteomics: measures “all” the protein concentrations in a cell
-• fluxomics: measures “all” the metabolic fluxes in a cell
-• metabolmics: measures “all” the metabolite concentrations in a
-cell
-
 ##  Summary 
 
 ### Charge balance
@@ -20,6 +6,16 @@ cell
 FBA calculates the flow of metabolites through this metabolic network, thereby making it possible to predict the growth rate of an organism or the rate of production of a biotechnologically important metabolite. 
 
 Defining bounds: Every reaction in a metabolic model has upper and lower bounds on its flux.Upper bound Vmax: Represents the maximum rate a reaction can operate at, often limited by factors like substrate availability or enzyme capacity.Lower bound Vmin: Represents the minimum rate. For reversible reactions, the lower bound is often set to the negative of the upper bound, while for irreversible reactions, it's frequently set to zero.Constraint on FBA: These bounds provide a realistic set of constraints, preventing the model from predicting infinite fluxes which are biologically impossible.
+
+
+### DATA INTEGRATION
+
+
+transcriptomics: measures “all” the mRNA concentrations in a cell
+- proteomics: measures “all” the protein concentrations in a cell
+-fluxomics: measures “all” the metabolic fluxes in a cell
+- metabolmics: measures “all” the metabolite concentrations in a cell
+
 
 ![](https://github.com/Shavindra/ISB/blob/main/2025/assets/flux.png?raw=true)
 
@@ -45,24 +41,6 @@ Defining bounds: Every reaction in a metabolic model has upper and lower bounds 
 3. If you want to kill a pathogenic microbe you inhibit the set of enzyme(s) (can have 1 element) such that no flux mode exists that supports growth
 4. If a cancer cell makes more product than theoretically expected from knowledge of one flux mode, then at least one more flux mode exists that makes the compound. E.g. more than two molecules of lactate cannot be made from a single molecule of glucose. If
 
-## Workgroup 1
-1. The European Space Agency (ESA) has asked you to design a probe that will look
-for signs of life in another planet. What will your probe search for?
-
-    > Chemical signatures
-    > Molecular signatures
-    > Bio Signautres
-    > Environmental condtions
-   
-2. The function of a protein depends on it’s three dimensional structure, but
-knowing how a protein folds in 3D is a complex problem. Do you see any way
-trying to predict a protein function from its sequence?
-
-    > Homologs. 
-
-5. Imagine you have a process, with a variable rate, that is making a product **A**. Another process is also consuming **A**. It’s very important to keep the concentration of **A** as stable as possible.
-    **a)** If you have complete control over the production of **A**, how would you design a **controller** to keep **[A]** stable? What would you **measure**, and what would you **influence**?
-    **b)** Could the mechanism you described be done **using only molecular interactions**? Explain briefly. 
 
 ## Summary notes
 ### Genome annotations
@@ -95,6 +73,125 @@ the rate (isotopomer flux analysis) of an enzyme-catalysed reaction depends on t
 ![](https://github.com/Shavindra/ISB/blob/main/2025/assets/protein_synth.png?raw=true)
 ![](https://github.com/Shavindra/ISB/blob/main/2025/assets/transcription.png?raw=true)
 ![](https://github.com/Shavindra/ISB/blob/main/2025/assets/translation.png?raw=true)
+
+
+### Transcription & Translation — high-level overview (UK)
+
+#### Big picture
+
+**DNA → transcription → RNA → translation → protein**
+Cells first make a **copy of a gene** into RNA, then **use that message** to build a protein.
+
+---
+
+#### Transcription (making RNA from DNA)
+
+* **Purpose:** turn the information in a gene into a **portable message (mRNA)**.
+* **Where:** in the **nucleus** (eukaryotes); in the **cytoplasm** (prokaryotes).
+* **How (simple):** a polymerase **binds near a gene, moves along the DNA**, and **builds a matching RNA strand** until it reaches a **stop signal**.
+* **Afterwards (eukaryotes):** the RNA is **tidied up** (capped, spliced, and given a tail) so it’s ready for export and use.
+* **Outcome:** a **mature mRNA** that carries the recipe for a protein.
+
+---
+
+#### Translation (making protein from mRNA)
+
+* **Purpose:** **decode** the mRNA to assemble a **chain of amino acids** that folds into a functional protein.
+* **Where:** at **ribosomes** in the cytoplasm (and on the rough ER in eukaryotes).
+* **How (simple):** the ribosome **locks onto the mRNA**, reads it in **three-letter “words” (codons)**, and **adds the matching amino acids** with the help of adaptor molecules, until a **stop** is reached.
+* **Outcome:** a **new protein**, ready to fold and (often) be modified or delivered to where it’s needed.
+
+---
+
+#### A few big differences to remember
+
+* **Separation:** In **eukaryotes**, transcription (nucleus) and translation (cytoplasm) are **separate**; in **prokaryotes** they can happen **at the same time**.
+* **Processing:** Eukaryotic mRNA is **processed** before use; prokaryotic mRNA is **used as made**.
+* **Control points:** Cells regulate gene expression mostly by **when/how much RNA is made**, **how stable the mRNA is**, and **how efficiently it’s translated**.
+
+---
+
+
+
+#### Key takeaways
+
+* Transcription = **copy the recipe**; translation = **cook the dish**.
+* Messages are read in **codons**; there’s a **start**, a **reading frame**, and a **stop**.
+* Both steps **use energy** and are **tightly controlled** to meet the cell’s needs.
+
+### Metabolism — quick revision sheet
+
+#### 1) ATP from glycolysis (per glucose)
+
+* **Net ATP:** **2**
+* (4 ATP produced − 2 ATP invested = **2 ATP net**)
+* Also yields **2 NADH** and **2 pyruvate**.
+
+####  2) Catabolism
+
+* **Breakdown** pathways that convert complex molecules → simpler ones, **releasing energy** (captured as **ATP** and reduced cofactors like **NADH/NADPH**) and generating intermediates for biosynthesis.
+
+####  3) Anabolism
+
+* **Biosynthetic** pathways that assemble complex molecules from simpler precursors, **requiring energy** (**ATP**) and **reducing power** (typically **NADPH**).
+
+####  4) Small molecules vs precursor metabolites
+
+* **Small molecules:** low-molecular-weight metabolites (e.g., amino acids, monosaccharides, nucleotides, fatty acids, acetyl-CoA, pyruvate, vitamins).
+* **Precursor metabolites:** a **defined set of central-carbon intermediates** that feed anabolism (e.g., glucose-6-P, fructose-6-P, glyceraldehyde-3-P, 3-phosphoglycerate, PEP, pyruvate, acetyl-CoA, oxaloacetate, α-ketoglutarate, ribose-5-P, erythrose-4-P, succinyl-CoA).
+
+####  5) Macromolecules and their monomers
+
+| Macromolecule                    | Built from (monomers)                             | Notes / examples                                                                   |
+| -------------------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Proteins**                     | **Amino acids**                                   | Peptide bonds form polypeptides.                                                   |
+| **Nucleic acids (DNA/RNA)**      | **Nucleotides** (deoxy-/ribo-)                    | Phosphodiester backbone; base pairing.                                             |
+| **Polysaccharides**              | **Monosaccharides** (e.g., glucose)               | Glycogen, starch, cellulose (glycosidic bonds).                                    |
+| **Lipids** *(not true polymers)* | **Fatty acids** + **glycerol** (± phosphate/head) | Triacylglycerols; phospholipids (glycerol-P + head group); sterols from isoprenes. |
+| **Bacterial peptidoglycan**      | **NAG/NAM sugars** + short **peptides**           | Forms the cell wall mesh.                                                          |
+
+####  6) Why cells require energy
+
+* **Drive endergonic reactions** and maintain **low entropy/order**.
+* **Biosynthesis** of macromolecules and assembly of cellular structures.
+* **Active transport** and maintenance of **ion gradients/membrane potential**.
+* **Mechanical work** (e.g., motility, muscle contraction, cytokinesis).
+* **Signalling**, **repair**, **turnover**, **detoxification**, and general **homeostasis**.
+* In some organisms, **thermogenesis** (heat production).
+
+---
+
+
+## Workgroup 1
+1. The European Space Agency (ESA) has asked you to design a probe that will look
+for signs of life in another planet. What will your probe search for?
+
+    > Chemical signatures
+    > Molecular signatures
+    > Bio Signautres
+    > Environmental condtions
+   
+2. The function of a protein depends on it’s three dimensional structure, but
+knowing how a protein folds in 3D is a complex problem. Do you see any way
+trying to predict a protein function from its sequence?
+
+    > Homologs. 
+
+5. Imagine you have a process, with a variable rate, that is making a product **A**. Another process is also consuming **A**. It’s very important to keep the concentration of **A** as stable as possible.
+    **a)** If you have complete control over the production of **A**, how would you design a **controller** to keep **[A]** stable? What would you **measure**, and what would you **influence**?
+    **b)** Could the mechanism you described be done **using only molecular interactions**? Explain briefly. 
+
+
+## Example
+![](https://github.com/Shavindra/ISB/blob/main/2025/assets/1.png?raw=true)
+
+
+## FLOW
+
+![](https://github.com/Shavindra/ISB/blob/main/2025/assets/2.png?raw=true)
+
+![](https://github.com/Shavindra/ISB/blob/main/2025/assets/3.png?raw=true)
+
 
 ## Glossary
 **Genome annotation**
